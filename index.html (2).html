@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#071a4a" />
+  <title>Harmonics Traders | Free Telegram Channel</title>
+  <style>
+    :root {
+      --navy: #061338;
+      --blue: #0b2c78;
+      --royal: #2458e8;
+      --cyan: #58d9ff;
+      --white: #f5f8ff;
+      --muted: #d8e4ff;
+      --line: rgba(255,255,255,.22);
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: var(--navy); }
+    body {
+      margin: 0;
+      min-height: 100svh;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      color: var(--white);
+      font-family: Inter, "Noto Sans Tamil", "Latha", Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 10% 5%, rgba(36,88,232,.5), transparent 38%),
+        radial-gradient(ellipse at 95% 45%, rgba(0,198,255,.22), transparent 35%),
+        linear-gradient(145deg, #07102c, #0b2e79 55%, #061338);
+    }
+    .page {
+      position: relative;
+      width: min(100%, 470px);
+      min-height: min(850px, calc(100svh - 24px));
+      overflow: hidden;
+      isolation: isolate;
+      padding: clamp(18px, 5vw, 28px) clamp(16px, 4.5vw, 24px) 18px;
+      border: 1px solid rgba(255,255,255,.38);
+      border-radius: 24px;
+      background:
+        linear-gradient(155deg, rgba(255,255,255,.13), rgba(255,255,255,.045)),
+        rgba(5, 18, 57, .74);
+      box-shadow: 0 20px 60px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.18);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .page::before, .page::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      pointer-events: none;
+      border-radius: 50%;
+      filter: blur(2px);
+    }
+    .page::before {
+      width: 310px; height: 310px;
+      top: -145px; left: -105px;
+      background: radial-gradient(circle, rgba(60,123,255,.42), transparent 70%);
+    }
+    .page::after {
+      width: 300px; height: 300px;
+      right: -145px; bottom: 10%;
+      background: radial-gradient(circle, rgba(45,211,255,.20), transparent 70%);
+    }
+    .lang-switch {
+      align-self: flex-end;
+      display: flex;
+      gap: 4px;
+      padding: 4px;
+      margin-bottom: 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(0,0,0,.18);
+    }
+    .lang-switch button {
+      border: 0;
+      border-radius: 999px;
+      padding: 7px 12px;
+      color: #e8efff;
+      background: transparent;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .lang-switch button.active {
+      color: #071338;
+      background: linear-gradient(135deg, #9ceaff, #ffffff);
+    }
+    .logo {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      display: grid;
+      place-content: center;
+      margin: 0 auto 15px;
+      border: 2px solid rgba(255,255,255,.82);
+      background: linear-gradient(145deg, #f8fbff, #dbe9ff);
+      box-shadow: 0 0 0 7px rgba(255,255,255,.06), 0 12px 30px rgba(0,0,0,.22);
+      color: #0a2d70;
+      line-height: 1.05;
+    }
+    .logo-mark {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: #153c8a;
+    }
+    .logo-name {
+      margin-top: 5px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .4px;
+    }
+    h1 {
+      margin: 0;
+      max-width: 390px;
+      font-size: clamp(23px, 6.3vw, 31px);
+      line-height: 1.18;
+      letter-spacing: -.65px;
+      font-weight: 850;
+      text-wrap: balance;
+    }
+    .title-accent {
+      color: #8de7ff;
+      text-shadow: 0 0 24px rgba(69,205,255,.22);
+    }
+    .subtitle {
+      margin: 14px 0 20px;
+      max-width: 360px;
+      color: var(--muted);
+      font-size: clamp(14px, 3.7vw, 16px);
+      line-height: 1.65;
+    }
+    .telegram-btn {
+      width: 100%;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 16px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+      background: linear-gradient(110deg, #1d9bea, #3158ef 60%, #493fe4);
+      border: 1px solid rgba(255,255,255,.28);
+      box-shadow: 0 9px 25px rgba(24,94,235,.32), inset 0 1px 0 rgba(255,255,255,.22);
+      transition: transform .18s ease, filter .18s ease;
+    }
+    .telegram-btn:active { transform: scale(.985); }
+    .telegram-btn:hover { filter: brightness(1.08); }
+    .telegram-icon { width: 19px; height: 19px; flex: 0 0 auto; }
+    .features {
+      width: 100%;
+      display: grid;
+      gap: 10px;
+      margin: 16px 0;
+    }
+    .feature {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 11px 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 14px;
+      background: linear-gradient(100deg, rgba(255,255,255,.11), rgba(255,255,255,.055));
+      color: #f6f9ff;
+      font-size: 14px;
+      font-weight: 650;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .feature span { color: #8de7ff; font-size: 17px; }
+    .second-cta { margin-top: 0; }
+    .trust-note {
+      margin: 15px 0 0;
+      color: #d5e3ff;
+      font-size: 11px;
+      line-height: 1.55;
+      opacity: .92;
+    }
+    .disclaimer {
+      width: 100%;
+      margin-top: auto;
+      padding-top: 18px;
+      color: #c6d4f1;
+      font-size: 9px;
+      line-height: 1.55;
+      opacity: .82;
+    }
+    @media (max-height: 720px) {
+      body { padding: 8px; }
+      .page { min-height: calc(100svh - 16px); padding-top: 14px; padding-bottom: 12px; border-radius: 20px; }
+      .lang-switch { margin-bottom: 6px; }
+      .logo { width: 82px; height: 82px; margin-bottom: 10px; }
+      .logo-mark { font-size: 22px; }
+      .logo-name { font-size: 10px; }
+      .subtitle { margin: 9px 0 13px; line-height: 1.5; }
+      .telegram-btn { min-height: 47px; padding: 11px; }
+      .features { gap: 7px; margin: 11px 0; }
+      .feature { min-height: 40px; padding: 8px; }
+      .trust-note { margin-top: 9px; }
+      .disclaimer { padding-top: 10px; font-size: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="lang-switch" role="group" aria-label="Choose language">
+      <button type="button" class="active" data-lang="en" aria-pressed="true">English</button>
+      <button type="button" data-lang="ta" aria-pressed="false">தமிழ்</button>
+    </div>
+
+    <!-- Replace this text logo with your official logo image if you have one. -->
+    <div class="logo" aria-label="Harmonics Traders logo">
+      <div class="logo-mark">H∿T</div>
+      <div class="logo-name">HARMONICS<br>TRADERS</div>
+    </div>
+
+    <h1 data-en="Tamil Harmonic Trader Raj" data-ta="தமிழ் ஹார்மோனிக் டிரேடர் ராஜ்">Tamil Harmonic Trader Raj</h1>
+    <p class="subtitle"
+       data-en="Unlock premium stock market insights for FREE! Join our Telegram channel for market education and updates."
+       data-ta="பிரீமியம் பங்குச் சந்தை தகவல்களை இலவசமாகப் பெறுங்கள்! சந்தை கல்வி மற்றும் புதுப்பிப்புகளுக்கு எங்கள் Telegram சேனலில் இணையுங்கள்.">
+      Unlock premium stock market insights for FREE! Join our Telegram channel for market education and updates.
+    </p>
+
+    <a class="telegram-btn" href="https://t.me/+aqpEAhNClM8zYmI1" target="_blank" rel="noopener noreferrer">
+      <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+        <path d="M21.6 4.2 18.4 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.5l-4.9-1.5c-1.1-.3-1.1-1 .2-1.5L20.4 3.3c.9-.3 1.6.2 1.2.9Z"/>
+      </svg>
+      <span data-en="Join Our Free Telegram Channel" data-ta="எங்கள் இலவச Telegram சேனலில் இணையுங்கள்">Join Our Free Telegram Channel</span>
+    </a>
+
+    <section class="features" aria-label="Channel highlights">
+      <div class="feature"><span>✓</span><span data-en="Market Education & Insights" data-ta="சந்தை கல்வி மற்றும் தகவல்கள்">Market Education &amp; Insights</span></div>
+      <div class="feature"><span>✓</span><span data-en="Trading Concepts & Analysis" data-ta="டிரேடிங் கருத்துகள் மற்றும் பகுப்பாய்வு">Trading Concepts &amp; Analysis</span></div>
+      <div class="feature"><span>✓</span><span data-en="Multiple Market Categories" data-ta="பல சந்தை வகைகள்">Multiple Market Categories</span></div>
+    </section>
+
+    <a class="telegram-btn second-cta" href="https://t.me/+aqpEAhNClM8zYmI1" target="_blank" rel="noopener noreferrer">
+      <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+        <path d="M21.6 4.2 18.4 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.5l-4.9-1.5c-1.1-.3-1.1-1 .2-1.5L20.4 3.3c.9-.3 1.6.2 1.2.9Z"/>
+      </svg>
+      <span data-en="Join Telegram Now" data-ta="இப்போதே Telegram-ல் இணையுங்கள்">Join Telegram Now</span>
+    </a>
+
+    <p class="trust-note"
+       data-en="Learn at your own pace. Market participation involves risk."
+       data-ta="உங்கள் வேகத்தில் கற்றுக்கொள்ளுங்கள். சந்தையில் வர்த்தகம் செய்வதில் ஆபத்து உள்ளது.">
+      Learn at your own pace. Market participation involves risk.
+    </p>
+
+    <footer class="disclaimer"
+      data-en="Disclaimer: This channel is for educational and informational purposes only and does not provide personalized investment advice or guarantee profits. Trading and investing involve risk, including possible loss of capital. Verify any registration or advisory claims before publishing."
+      data-ta="பொறுப்புத் துறப்பு: இந்த சேனல் கல்வி மற்றும் தகவல் நோக்கங்களுக்காக மட்டுமே. தனிப்பட்ட முதலீட்டு ஆலோசனை அல்லது லாப உத்தரவாதம் வழங்கப்படவில்லை. வர்த்தகம் மற்றும் முதலீட்டில் முதலீட்டுத் தொகையை இழக்கும் அபாயம் உள்ளது.">
+      Disclaimer: This channel is for educational and informational purposes only and does not provide personalized investment advice or guarantee profits. Trading and investing involve risk, including possible loss of capital. Verify any registration or advisory claims before publishing.
+    </footer>
+  </main>
+
+  <script>
+    const languageButtons = document.querySelectorAll("[data-lang]");
+    const translatable = document.querySelectorAll("[data-en][data-ta]");
+
+    function setLanguage(language) {
+      document.documentElement.lang = language === "ta" ? "ta" : "en";
+      translatable.forEach((element) => {
+        element.textContent = element.dataset[language];
+      });
+      languageButtons.forEach((button) => {
+        const active = button.dataset.lang === language;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+    }
+
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+  </script>
+</body>
+</html>
